@@ -1,0 +1,32 @@
+{
+  "name": "static-bundler",
+  "version": "1.0.0",
+  "description": "11ty and Parcel bundler 🔥",
+  "private": true,
+  "author": "Thomas Kim",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf ./dev_site ./dev_bundle ./prod_bundle ./.cache",
+    "dev": "npm run clean && npm run prod:eleventy && run-p --race dev:eleventy dev:parcel",
+    "dev:eleventy": "eleventy --input=./site/*.* --output=./dev_site --watch",
+    "dev:parcel": "parcel ./dev_site/* --out-dir ./dev_bundle --open",
+    "prod": "npm run clean && npm run prod:eleventy && npm run prod:parcel",
+    "prod:eleventy": "eleventy --input=./site/*.* --output=./dev_site",
+    "prod:parcel": "parcel build ./dev_site/* --out-dir ./prod_bundle --no-source-maps"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.6.0",
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "autoprefixer": "^9.4.4",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.11.0",
+    "prettier": "1.15.1",
+    "sass": "^1.15.3",
+    "tailwindcss": "^0.7.3"
+  }
+}
