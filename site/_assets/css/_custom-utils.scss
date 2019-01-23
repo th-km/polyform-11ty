@@ -1,0 +1,121 @@
+/* -----  Margins --------------------------------------------- */
+
+.about p + p {
+    @apply mt-12;
+}
+
+.contact p + ul {
+    @apply mt-12;
+}
+
+// Set the min-width of the element before wrapping
+.flex-basis {
+    flex-basis: calc((62rem - 100%) * 999);
+}
+
+::selection {
+    @apply bg-yellow-lightest;
+}
+
+.vertical-lr {
+    writing-mode: vertical-lr;
+}
+
+.info {
+    transition: all 0.25s ease;
+}
+
+.info:hover {
+    transform: scale(1.2);
+
+    & .message p {
+        opacity: 0;
+        transform: translateX(0);
+    }
+}
+
+.message p {
+    opacity: 0;
+    transform: translateX(5rem);
+}
+
+/* -----  Before element on accordion --------------------------------------------- */
+
+.arrow {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.25s ease;
+}
+
+.arrow::before {
+    content: '+';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-1.5em);
+    transition: transform 0.25s ease;
+}
+
+button:hover .arrow,
+.arrow:hover {
+    transform: translateX(1em);
+}
+
+button:hover .arrow::before,
+.arrow:hover::before {
+    transform: translateX(-1em);
+    opacity: 1;
+}
+
+/* -----  Responsive typography  --------------------------------------------- */
+
+.text-fluid {
+    font-size: 20px;
+}
+
+@screen sm {
+    .text-fluid {
+        font-size: calc(20px + 12 * (100vw - 576px) / 1644);
+    }
+}
+
+@screen xxl {
+    .text-fluid {
+        font-size: 32px;
+    }
+}
+
+/* -----  Js Classes  --------------------------------------------- */
+
+.accordion__content {
+    @apply overflow-hidden h-0 p-0;
+    transition: height 0.25s ease-out;
+}
+
+.accordion__inner {
+    @apply block;
+}
+
+.indicator__plus {
+    @apply block;
+}
+
+.indicator__minus {
+    @apply hidden;
+}
+
+.accordion.is-open .indicator__plus {
+    @apply hidden;
+}
+
+.accordion.is-open .indicator__minus {
+    @apply block;
+}
+
+// toggle visibility with Js
+.is-visible {
+    opacity: 1;
+}

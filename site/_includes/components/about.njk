@@ -1,0 +1,8 @@
+<div class="about">
+    <h2 class="subtitle">{{ site.section.about }}</h2>
+
+    {% for about in collections.about %}
+        {{ about.templateContent | safe }}
+    {% endfor %} 
+
+</div>
