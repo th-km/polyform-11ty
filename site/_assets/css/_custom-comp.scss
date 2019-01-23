@@ -1,0 +1,16 @@
+.link {
+    @apply text-white no-underline;
+    transition: color 0.25s ease;
+
+    &:hover {
+        @apply text-grey-dark;
+    }
+}
+
+.subtitle {
+    @apply inline-block mb-8 text-base font-normal border-b border-white;
+}
+
+.typography {
+    @apply font-sans font-normal leading-normal;
+}
