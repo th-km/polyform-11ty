@@ -172,11 +172,7 @@ module.exports = {
     'md': '768px',
     'lg': '992px',
     'xl': '1200px',
-<<<<<<< HEAD
-    'xxl': '2200px',
-=======
     'xxl': '1800px',
->>>>>>> develop
   },
 
 
