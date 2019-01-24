@@ -11,5 +11,3 @@ images:
 layout: main
 permalink: /
 ---
-
-Polyform Studio - coming soon

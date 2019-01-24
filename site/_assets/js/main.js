@@ -57,7 +57,7 @@ const loop = () => {
 
 // Define interval
 const startLoop = () => {
-    interval = setInterval(loop, 1000)
+    interval = setInterval(loop, 350)
 }
 
 // Wait until all images are loaded and start the loop
@@ -75,16 +75,16 @@ heroTag.addEventListener('mouseleave', () => {
     startLoop()
 })
 
-// —— Listener for mobile devices ——
-heroTag.addEventListener('touchstart', () => {
-    clearInterval(interval)
-})
-
-heroTag.addEventListener('touchend', () => {
-    startLoop()
-})
-
-// Date
+// Generate date
 // ——————————————————
 const date = new Date().getFullYear()
 document.querySelector('.date').innerHTML = `&copy; ${date}`
+
+// Scroll down
+// ——————————————————
+const arrowTag = document.querySelector('.arrow')
+const elementToScroll = document.querySelector('.content')
+
+arrowTag.addEventListener('click', () => {
+    elementToScroll.scrollIntoView({ behavior: 'smooth' })
+})

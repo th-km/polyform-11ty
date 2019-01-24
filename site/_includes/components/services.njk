@@ -1,16 +1,19 @@
 <div class="services mt-24">
-    <h2 class="subtitle">{{ site.section.services }}</h2>
+    <h2 class="cat">{{ site.section.services }}</h2>
 
     {% for services in collections.services %}
-        <div class="accordion py-6 border-b border-white">
-            <div class="accordion__header w-full arrow">
-                <button class="focus:outline-none text-white">
-                    {{ services.data.title }}
-                </button>
+        <div class="accordion border-b border-grey">
+            <div class="accordion__header overflow-hidden">
+                <h3 class="accordion__title">
+                    <button class="btn">
+                        {{ services.data.title }}
+                    </button>
+                </h3>
             </div>
-            <div class="accordion__content">
-                <div class="accordion__inner pt-4 pb-8">
+            <div class="accordion__content overflow-hidden h-0 p-0">
+                <div class="accordion__inner pb-12">
                     {{ services.templateContent | safe }}
+                    <div class="mt-6 text-grey capitalize">{{ services.data.fields | makeCleanTag | safe }}</div>
                 </div>
             </div>
         </div>

@@ -51,11 +51,11 @@ let colors = {
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
-  'grey': '#b8c2cc',
+  'grey': '#afafaf',
   'grey-light': '#dae1e7',
   'grey-lighter': '#f1f5f8',
   'grey-lightest': '#f8fafc',
-  'white': '#ffffff',
+  'white': '#fafafa',
 
   'red-darkest': '#3b0d0c',
   'red-darker': '#621b18',
@@ -172,7 +172,7 @@ module.exports = {
     'md': '768px',
     'lg': '992px',
     'xl': '1200px',
-    'xxl': '2200px',
+    'xxl': '1800px',
   },
 
 

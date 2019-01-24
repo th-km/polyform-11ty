@@ -1,4 +1,8 @@
-/* -----  Margins --------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+/* -----  Utility fix --------------------------------------------- */
 
 .about p + p {
     @apply mt-12;
@@ -8,66 +12,20 @@
     @apply mt-12;
 }
 
-// Set the min-width of the element before wrapping
-.flex-basis {
-    flex-basis: calc((62rem - 100%) * 999);
+.services .accordion:first-of-type button {
+    @apply pt-0;
 }
 
 ::selection {
-    @apply bg-yellow-lightest;
+    @apply bg-grey;
 }
 
-.vertical-lr {
-    writing-mode: vertical-lr;
+.h-75 {
+    height: 75vh;
 }
 
-.info {
-    transition: all 0.25s ease;
-}
-
-.info:hover {
-    transform: scale(1.2);
-
-    & .message p {
-        opacity: 0;
-        transform: translateX(0);
-    }
-}
-
-.message p {
-    opacity: 0;
-    transform: translateX(5rem);
-}
-
-/* -----  Before element on accordion --------------------------------------------- */
-
-.arrow {
-    position: relative;
-    display: inline-block;
-    transition: transform 0.25s ease;
-}
-
-.arrow::before {
-    content: '+';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-1.5em);
-    transition: transform 0.25s ease;
-}
-
-button:hover .arrow,
-.arrow:hover {
-    transform: translateX(1em);
-}
-
-button:hover .arrow::before,
-.arrow:hover::before {
-    transform: translateX(-1em);
-    opacity: 1;
+.letters:hover img {
+    filter: brightness(0.7);
 }
 
 /* -----  Responsive typography  --------------------------------------------- */
@@ -78,44 +36,46 @@ button:hover .arrow::before,
 
 @screen sm {
     .text-fluid {
-        font-size: calc(20px + 12 * (100vw - 576px) / 1644);
+        font-size: calc(20px + 20 * (100vw - 576px) / 1224);
     }
 }
 
 @screen xxl {
     .text-fluid {
-        font-size: 32px;
+        font-size: 40px;
     }
 }
 
-/* -----  Js Classes  --------------------------------------------- */
-
+/* -----  Js interaction  --------------------------------------------- */
+/* purgecss start ignore */
+// Add transition to accordion when open
 .accordion__content {
-    @apply overflow-hidden h-0 p-0;
     transition: height 0.25s ease-out;
 }
 
-.accordion__inner {
-    @apply block;
+// Append arrow
+.accordion__title {
+    @apply relative;
+    transition: transform 0.25s ease;
 }
 
-.indicator__plus {
-    @apply block;
+.accordion__title button::before {
+    content: '→';
+    @apply absolute pin-l text-grey;
+    transform: translateX(-1em);
+    transition: transform 0.25s ease;
 }
 
-.indicator__minus {
-    @apply hidden;
+.is-open .accordion__title button::before {
+    transform: translateX(-1em);
 }
 
-.accordion.is-open .indicator__plus {
-    @apply hidden;
+.is-open .accordion__title {
+    transform: translateX(1em);
 }
 
-.accordion.is-open .indicator__minus {
-    @apply block;
-}
-
-// toggle visibility with Js
+// toggle image visibility
 .is-visible {
-    opacity: 1;
+    @apply opacity-100;
 }
+/* purgecss end ignore */
