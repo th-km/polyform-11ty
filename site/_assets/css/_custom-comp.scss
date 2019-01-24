@@ -3,12 +3,29 @@
     transition: color 0.25s ease;
 
     &:hover {
+<<<<<<< HEAD
         @apply text-grey-dark;
     }
 }
 
 .subtitle {
     @apply inline-block mb-8 text-base font-normal border-b border-white;
+=======
+        @apply text-grey;
+    }
+}
+
+.btn {
+    @apply w-full py-12 text-left text-white;
+
+    &:focus {
+        @apply outline-none;
+    }
+}
+
+.cat {
+    @apply inline-block mb-6 text-xl text-grey font-normal border-b border-grey;
+>>>>>>> develop
 }
 
 .typography {

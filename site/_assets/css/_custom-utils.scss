@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 /* -----  Margins --------------------------------------------- */
+=======
+html {
+    scroll-behavior: smooth;
+}
+
+/* -----  Utility fix --------------------------------------------- */
+>>>>>>> develop
 
 .about p + p {
     @apply mt-12;
@@ -8,6 +16,7 @@
     @apply mt-12;
 }
 
+<<<<<<< HEAD
 // Set the min-width of the element before wrapping
 .flex-basis {
     flex-basis: calc((62rem - 100%) * 999);
@@ -68,6 +77,22 @@ button:hover .arrow::before,
 .arrow:hover::before {
     transform: translateX(-1em);
     opacity: 1;
+=======
+.services .accordion:first-of-type button {
+    @apply pt-0;
+}
+
+::selection {
+    @apply bg-grey;
+}
+
+.h-75 {
+    height: 75vh;
+}
+
+.letters:hover img {
+    filter: brightness(0.7);
+>>>>>>> develop
 }
 
 /* -----  Responsive typography  --------------------------------------------- */
@@ -78,12 +103,17 @@ button:hover .arrow::before,
 
 @screen sm {
     .text-fluid {
+<<<<<<< HEAD
         font-size: calc(20px + 12 * (100vw - 576px) / 1644);
+=======
+        font-size: calc(20px + 20 * (100vw - 576px) / 1224);
+>>>>>>> develop
     }
 }
 
 @screen xxl {
     .text-fluid {
+<<<<<<< HEAD
         font-size: 32px;
     }
 }
@@ -119,3 +149,42 @@ button:hover .arrow::before,
 .is-visible {
     opacity: 1;
 }
+=======
+        font-size: 40px;
+    }
+}
+
+/* -----  Js interaction  --------------------------------------------- */
+/* purgecss start ignore */
+// Add transition to accordion when open
+.accordion__content {
+    transition: height 0.25s ease-out;
+}
+
+// Append arrow
+.accordion__title {
+    @apply relative;
+    transition: transform 0.25s ease;
+}
+
+.accordion__title button::before {
+    content: '→';
+    @apply absolute pin-l text-grey;
+    transform: translateX(-1em);
+    transition: transform 0.25s ease;
+}
+
+.is-open .accordion__title button::before {
+    transform: translateX(-1em);
+}
+
+.is-open .accordion__title {
+    transform: translateX(1em);
+}
+
+// toggle image visibility
+.is-visible {
+    @apply opacity-100;
+}
+/* purgecss end ignore */
+>>>>>>> develop

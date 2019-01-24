@@ -11,6 +11,26 @@
 
 <body class="typography text-fluid bg-black text-white">
 
+<<<<<<< HEAD
     <div class="m-10">{{ content | safe }}</div>
+=======
+    <main class="flex flex-wrap">
+
+        <section class="letters w-full lg:w-1/2 xxl:w-2/5">
+            {% include "components/hero.njk" %}
+        </section>
+
+        <section class="content w-full lg:w-1/2 xxl:w-3/5">
+            <div class="p-8 xl:max-w-3xl xl:mx-auto">
+                {% include "components/about.njk" %}
+                {% include "components/services.njk" %}
+                {% include "components/contact.njk" %}
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../site/_assets/js/main.js"></script>
+>>>>>>> develop
 </body>
 </html>
