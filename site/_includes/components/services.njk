@@ -1,18 +1,4 @@
 <div class="services mt-24">
-<<<<<<< HEAD
-    <h2 class="subtitle">{{ site.section.services }}</h2>
-
-    {% for services in collections.services %}
-        <div class="accordion py-6 border-b border-white">
-            <div class="accordion__header w-full arrow">
-                <button class="focus:outline-none text-white">
-                    {{ services.data.title }}
-                </button>
-            </div>
-            <div class="accordion__content">
-                <div class="accordion__inner pt-4 pb-8">
-                    {{ services.templateContent | safe }}
-=======
     <h2 class="cat">{{ site.section.services }}</h2>
 
     {% for services in collections.services %}
@@ -28,7 +14,6 @@
                 <div class="accordion__inner pb-12">
                     {{ services.templateContent | safe }}
                     <div class="mt-6 text-grey capitalize">{{ services.data.fields | makeCleanTag | safe }}</div>
->>>>>>> develop
                 </div>
             </div>
         </div>

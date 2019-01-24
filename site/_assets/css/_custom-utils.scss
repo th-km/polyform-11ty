@@ -16,68 +16,6 @@ html {
     @apply mt-12;
 }
 
-<<<<<<< HEAD
-// Set the min-width of the element before wrapping
-.flex-basis {
-    flex-basis: calc((62rem - 100%) * 999);
-}
-
-::selection {
-    @apply bg-yellow-lightest;
-}
-
-.vertical-lr {
-    writing-mode: vertical-lr;
-}
-
-.info {
-    transition: all 0.25s ease;
-}
-
-.info:hover {
-    transform: scale(1.2);
-
-    & .message p {
-        opacity: 0;
-        transform: translateX(0);
-    }
-}
-
-.message p {
-    opacity: 0;
-    transform: translateX(5rem);
-}
-
-/* -----  Before element on accordion --------------------------------------------- */
-
-.arrow {
-    position: relative;
-    display: inline-block;
-    transition: transform 0.25s ease;
-}
-
-.arrow::before {
-    content: '+';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-1.5em);
-    transition: transform 0.25s ease;
-}
-
-button:hover .arrow,
-.arrow:hover {
-    transform: translateX(1em);
-}
-
-button:hover .arrow::before,
-.arrow:hover::before {
-    transform: translateX(-1em);
-    opacity: 1;
-=======
 .services .accordion:first-of-type button {
     @apply pt-0;
 }
@@ -92,7 +30,6 @@ button:hover .arrow::before,
 
 .letters:hover img {
     filter: brightness(0.7);
->>>>>>> develop
 }
 
 /* -----  Responsive typography  --------------------------------------------- */

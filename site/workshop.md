@@ -2,12 +2,9 @@
 title: Workshops
 date: 2018-01-04
 tags: services
-<<<<<<< HEAD
-=======
 fields:
     - 'Teaching'
     - 'Talks'
->>>>>>> develop
 permalink: false
 ---
 
