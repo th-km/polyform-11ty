@@ -1,8 +1,12 @@
+<<<<<<< HEAD
+/* -----  Margins --------------------------------------------- */
+=======
 html {
     scroll-behavior: smooth;
 }
 
 /* -----  Utility fix --------------------------------------------- */
+>>>>>>> develop
 
 .about p + p {
     @apply mt-12;
@@ -36,12 +40,53 @@ html {
 
 @screen sm {
     .text-fluid {
+<<<<<<< HEAD
+        font-size: calc(20px + 12 * (100vw - 576px) / 1644);
+=======
         font-size: calc(20px + 20 * (100vw - 576px) / 1224);
+>>>>>>> develop
     }
 }
 
 @screen xxl {
     .text-fluid {
+<<<<<<< HEAD
+        font-size: 32px;
+    }
+}
+
+/* -----  Js Classes  --------------------------------------------- */
+
+.accordion__content {
+    @apply overflow-hidden h-0 p-0;
+    transition: height 0.25s ease-out;
+}
+
+.accordion__inner {
+    @apply block;
+}
+
+.indicator__plus {
+    @apply block;
+}
+
+.indicator__minus {
+    @apply hidden;
+}
+
+.accordion.is-open .indicator__plus {
+    @apply hidden;
+}
+
+.accordion.is-open .indicator__minus {
+    @apply block;
+}
+
+// toggle visibility with Js
+.is-visible {
+    opacity: 1;
+}
+=======
         font-size: 40px;
     }
 }
@@ -79,3 +124,4 @@ html {
     @apply opacity-100;
 }
 /* purgecss end ignore */
+>>>>>>> develop
