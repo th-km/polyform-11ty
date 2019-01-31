@@ -8,11 +8,17 @@
 }
 
 .btn {
-    @apply w-full py-12 text-left text-white;
+    @apply py-16 text-white;
 
     &:focus {
         @apply outline-none;
     }
+}
+
+.collapse,
+.expand {
+    @apply font-normal text-grey;
+    transition: color 0.25s ease;
 }
 
 .cat {
@@ -20,5 +26,5 @@
 }
 
 .typography {
-    @apply font-sans font-normal leading-normal;
+    @apply font-sans font-normal leading-normal antialiased;
 }

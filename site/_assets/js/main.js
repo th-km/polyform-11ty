@@ -4,7 +4,7 @@ const container = document.querySelector('.services')
 
 const getHeight = (accordion, content) => {
     const inner = content.children[0]
-    const height = accordion.classList.contains('is-open')
+    const height = accordion.classList.contains('js-is-open')
         ? 0
         : inner.getBoundingClientRect().height
 
@@ -12,7 +12,7 @@ const getHeight = (accordion, content) => {
 }
 
 const toggleAccordion = accordion => {
-    accordion.classList.toggle('is-open')
+    accordion.classList.toggle('js-is-open')
 }
 
 const updateHeight = (element, height) => {
@@ -48,43 +48,48 @@ const loop = () => {
 
     // Remove class
     images.forEach(image => {
-        image.classList.remove('is-visible')
+        image.classList.remove('js-is-visible')
     })
 
     // Add class to the current image
-    images[currentImage].classList.add('is-visible')
+    images[currentImage].classList.add('js-is-visible')
+}
+
+// Random
+const randomImage = () => {
+    const randomIndex = Math.floor(Math.random() * images.length)
+    images[randomIndex].classList.add('js-is-random')
 }
 
 // Define interval
 const startLoop = () => {
-    interval = setInterval(loop, 350)
+    interval = setInterval(loop, 150)
 }
 
-// Wait until all images are loaded and start the loop
 window.addEventListener('load', () => {
-    startLoop()
+    randomImage()
 })
 
 // Stop the loop
 heroTag.addEventListener('mouseenter', () => {
-    clearInterval(interval)
+    startLoop()
 })
 
 // Start again
 heroTag.addEventListener('mouseleave', () => {
+    clearInterval(interval)
+})
+
+// Mobile touch
+heroTag.addEventListener('touchstart', () => {
     startLoop()
+})
+
+heroTag.addEventListener('touchend', () => {
+    clearInterval(interval)
 })
 
 // Generate date
 // ——————————————————
 const date = new Date().getFullYear()
 document.querySelector('.date').innerHTML = `&copy; ${date}`
-
-// Scroll down
-// ——————————————————
-const arrowTag = document.querySelector('.arrow')
-const elementToScroll = document.querySelector('.content')
-
-arrowTag.addEventListener('click', () => {
-    elementToScroll.scrollIntoView({ behavior: 'smooth' })
-})

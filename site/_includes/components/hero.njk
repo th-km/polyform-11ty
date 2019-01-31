@@ -1,16 +1,8 @@
-<div class="hero relative pin-t pin-l w-full h-75 sticky cursor-pointer lg:h-screen">
+<div class="hero relative pin-t w-full h-screen sticky">
 
     <div class="relative w-full h-full max-w-lg mx-auto">
         {% for filename in images %}
-            <img class="absolute pin w-full h-full opacity-0" src="../site/_assets/img/{{ filename | urlencode }}">
+            <img class="absolute w-full h-full bg-black" src="../site/_assets/img/{{ filename | urlencode }}">
         {% endfor %}
     </div>
-
-    <div class="absolute pin-b pin-r w-6 h-6 m-6 text-grey arrow cursor-pointer lg:hidden">
-        <svg class="fill-current" viewBox="0 0 30 15" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0h30L15 15 0 0z"/>
-        </svg>
-    </div>
 </div>
-
-
