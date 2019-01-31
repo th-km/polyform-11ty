@@ -1,4 +1,3 @@
-/* eslint-disable */
 /*
 
 Tailwind - The Utility-First CSS Framework
@@ -51,7 +50,7 @@ let colors = {
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
-  'grey': '#afafaf',
+  'grey': '#6b6b6b',
   'grey-light': '#dae1e7',
   'grey-lighter': '#f1f5f8',
   'grey-lightest': '#f8fafc',
@@ -172,7 +171,7 @@ module.exports = {
     'md': '768px',
     'lg': '992px',
     'xl': '1200px',
-    'xxl': '1800px',
+    'xxl': '2560px',
   },
 
 
@@ -310,7 +309,7 @@ module.exports = {
   leading: {
     'none': 1,
     'tight': 1.25,
-    'normal': 1.6,
+    'normal': 1.5,
     'loose': 2,
   },
 
@@ -533,7 +532,7 @@ module.exports = {
   height: {
     'auto': 'auto',
     'px': '1px',
-    '0': '0rem',
+    '0': '0px',
     '1': '0.25rem',
     '2': '0.5rem',
     '3': '0.75rem',
@@ -679,7 +678,6 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
-    '40': '10rem',
   },
 
 
@@ -716,7 +714,6 @@ module.exports = {
     '20': '5rem',
     '24': '6rem',
     '32': '8rem',
-    '40': '10rem',
   },
 
 
@@ -962,7 +959,7 @@ module.exports = {
     require('tailwindcss/plugins/container')({
       // center: true,
       // padding: '1rem',
-    })
+    }),
   ],
 
 

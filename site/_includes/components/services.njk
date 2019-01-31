@@ -5,15 +5,21 @@
         <div class="accordion border-b border-grey">
             <div class="accordion__header overflow-hidden">
                 <h3 class="accordion__title">
-                    <button class="btn">
+                    <button class="btn w-full flex justify-between">
                         {{ services.data.title }}
+                        <span class="expand">More info</span>
+                        <span class="collapse">Less info</span>
                     </button>
                 </h3>
             </div>
             <div class="accordion__content overflow-hidden h-0 p-0">
                 <div class="accordion__inner pb-12">
                     {{ services.templateContent | safe }}
-                    <div class="mt-6 text-grey capitalize">{{ services.data.fields | makeCleanTag | safe }}</div>
+                    <div class="fields mt-6">
+                        {% for fields in services.data.fields %}
+                            <span class="text-grey">{{ fields }}</span>
+                        {% endfor %}
+                    </div>    
                 </div>
             </div>
         </div>

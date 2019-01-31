@@ -1,9 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
-/* -----  Utility fix --------------------------------------------- */
-
 .about p + p {
     @apply mt-12;
 }
@@ -13,19 +7,21 @@ html {
 }
 
 .services .accordion:first-of-type button {
-    @apply pt-0;
+    @apply pt-4;
 }
 
 ::selection {
     @apply bg-grey;
 }
 
-.h-75 {
-    height: 75vh;
+.hero img {
+    pointer-events: none;
+    user-select: none;
 }
 
-.letters:hover img {
-    filter: brightness(0.7);
+.fields span:not(:last-child)::after {
+    content: '/';
+    @apply text-grey pl-2;
 }
 
 /* -----  Responsive typography  --------------------------------------------- */
@@ -36,7 +32,7 @@ html {
 
 @screen sm {
     .text-fluid {
-        font-size: calc(20px + 20 * (100vw - 576px) / 1224);
+        font-size: calc(20px + 20 * (100vw - 576px) / 1984);
     }
 }
 
@@ -47,14 +43,13 @@ html {
 }
 
 /* -----  Js interaction  --------------------------------------------- */
-/* purgecss start ignore */
 // Add transition to accordion when open
 .accordion__content {
     transition: height 0.25s ease-out;
 }
 
 // Append arrow
-.accordion__title {
+.accordion__title button {
     @apply relative;
     transition: transform 0.25s ease;
 }
@@ -66,16 +61,31 @@ html {
     transition: transform 0.25s ease;
 }
 
-.is-open .accordion__title button::before {
-    transform: translateX(-1em);
-}
-
-.is-open .accordion__title {
+.js-is-open .accordion__title button {
     transform: translateX(1em);
 }
 
-// toggle image visibility
-.is-visible {
-    @apply opacity-100;
+.expand {
+    @apply block;
 }
-/* purgecss end ignore */
+
+.collapse {
+    @apply hidden;
+}
+
+.js-is-open .expand {
+    @apply hidden;
+}
+
+.js-is-open .collapse {
+    @apply block;
+    transform: translateX(0.8em);
+}
+
+.js-is-visible {
+    @apply z-50;
+}
+
+.js-is-random {
+    @apply z-10;
+}

@@ -5,10 +5,6 @@ module.exports = function (eleventyConfig) {
     return !value || value === "" ? "index" : value
   })
 
-  eleventyConfig.addFilter('makeCleanTag', function(word) {
-    return [...word].map(letter => `<span>${letter}</span>`).join(' / ')
-  })
-
   eleventyConfig.addLayoutAlias("main", "layouts/main.njk")
 
   return {

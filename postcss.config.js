@@ -14,6 +14,7 @@ const production = {
         autoprefixer(),
         purgecss({
             content: ['./**/*.html'],
+            whitelistPatterns: [/^js-is-/],
             extractors: [
                 {
                     extractor: TailwindExtractor,

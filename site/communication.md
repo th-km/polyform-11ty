@@ -3,10 +3,10 @@ title: Communication
 date: 2018-01-02
 tags: services
 fields:
-    - art direction
-    - identities
-    - signage
+    - Art Direction
+    - Identities
     - Publications
+    - Signage
 permalink: false
 ---
 
